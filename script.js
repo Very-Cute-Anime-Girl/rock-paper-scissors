@@ -194,3 +194,18 @@ const productoDeTodo = arr.reduce((total, itemActual) => {
 }, 1);
 console.log(productoDeTodo)
 console.log(arr)
+
+// Ejercicio camelize
+function capitalizar(text) {
+    const primeraLetra = text.charAt(0);
+    const resto = text.slice(1);
+    return primeraLetra.toUpperCase() + resto;
+}
+
+function capitalizarCadaPalabra(texto) {
+    const palabras = texto.split("-");
+    let palabrasMayus = palabras.map((palabra, index) => index>=1 ? capitalizar(palabra) : palabra);
+    return palabrasMayus.join("");
+}
+
+console.log(capitalizarCadaPalabra("texto-con-muchos-guiones-solo-para-probar"))
